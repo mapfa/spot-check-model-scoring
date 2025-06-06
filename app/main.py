@@ -72,7 +72,6 @@ async def predict(file: UploadFile = File(...)) -> Dict[str, Any]:
         return {
             "predicted_class": int(predicted_class),
             "confidence": float(confidence),
-            "status": "success"
         }
     
     except Exception as e:

@@ -32,7 +32,6 @@ Endpoint for making predictions on images.
 {
     "predicted_class": 0,
     "confidence": 0.95,
-    "status": "success"
 }
 ```
 
