@@ -6,8 +6,12 @@ PORT = 8000
 .PHONY: build run stop clean
 
 # Build the Docker image
+
 build:
 	docker build -t $(IMAGE_NAME) .
+
+# For building with Google Cloud Build and pushing to Artifact Registry
+# docker build --platform linux/amd64 -t $GCP_REGION-docker.pkg.dev/$GCP_PROJECT_ID/$DOCKER_REPO_NAME/$DOCKER_IMAGE_NAME:0.1 .
 
 # Run the containerized application
 run:
@@ -41,4 +45,4 @@ help:
 	@echo "  make clean    - Remove the container and image"
 	@echo "  make up       - Build and run in one command"
 	@echo "  make logs     - Show container logs"
-	@echo "  make help     - Show this help message" 
+	@echo "  make help     - Show this help message"
